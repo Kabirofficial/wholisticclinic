@@ -22,7 +22,6 @@
 }
 
 .navbar-logo {
-  justify-self: start;
   cursor: pointer;
   text-decoration: none;
   display: flex;
@@ -30,7 +29,7 @@
 }
 
 .logo-img {
-  height: 80px; 
+  height: 60px; 
   width: auto;   
 }
 
@@ -54,7 +53,6 @@
   text-decoration: none;
   padding: 0 1rem;
   height: 100%;
-  transition: all 0.2s ease-out;
 }
 
 .nav-links:hover {
@@ -62,7 +60,6 @@
 }
 
 .nav-links.active {
-  color: var(--primary-green);
   border-bottom: 3px solid var(--primary-green);
 }
 
@@ -72,10 +69,72 @@
   padding: 10px 22px;
   border-radius: 6px; 
   text-decoration: none;
-  transition: background-color 0.3s ease;
   margin-left: 20px;
 }
 
 .nav-links-button:hover {
   background-color: var(--dark-green-hover);
+}
+
+.menu-icon {
+  display: none;
+}
+
+@media screen and (max-width: 960px) {
+  .navbar-container {
+    padding: 0 20px;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100vh - 80px); 
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    background: var(--light-green-bg);
+  }
+
+  .nav-menu.active {
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+
+  .nav-item {
+    width: 100%;
+    height: auto;
+  }
+
+  .nav-links {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+  }
+
+  .nav-links.active {
+    border-bottom: none;
+    color: var(--primary-green);
+    font-weight: bold;
+  }
+
+  .nav-links-button {
+    display: block;
+    text-align: center;
+    padding: 1.5rem;
+    margin: 2rem auto;
+    width: 80%;
+  }
+  
+  .menu-icon {
+    display: block;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--charcoal-text);
+  }
 }

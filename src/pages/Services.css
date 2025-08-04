@@ -59,13 +59,32 @@
     flex-direction: row-reverse;
 }
 
-@media (max-width: 768px) {
+
+@media screen and (max-width: 960px) {
+    .services-header {
+        padding: 3rem 1.5rem;
+    }
+
+    .services-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .services-header p {
+        font-size: 1rem;
+    }
+    
+    .services-content-container {
+        margin: 3rem auto;
+        padding: 0 1.5rem;
+    }
 
     .service-block,
     .service-block.reverse {
         flex-direction: column;
         text-align: center;
-        gap: 2rem;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+        padding: 1.5rem;
     }
 
     .service-block-icon {
@@ -75,5 +94,9 @@
 
     .service-block-text h2 {
         font-size: 1.75rem;
+    }
+    
+    .service-block-text p {
+        font-size: 1rem;
     }
 }
