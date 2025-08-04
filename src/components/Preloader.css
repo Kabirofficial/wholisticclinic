@@ -1,0 +1,78 @@
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--light-green-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.preloader-fading-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- Keyframe Animations --- */
+
+/* For icons that appear and then disappear */
+@keyframes fadeInOut {
+  0%   { opacity: 0; }
+  50%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* For the final logo that just appears and stays */
+@keyframes fadeInStay {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+
+/* --- Element Styling --- */
+
+/* Common style for the small, fading icons */
+.preloader-fading-icon {
+  position: absolute;
+  width: 60px; /* A bit bigger for better visibility */
+  opacity: 0; /* Start hidden */
+  animation-name: fadeInOut;
+  animation-duration: 1.5s; /* Each icon is visible for 1.5s */
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards; /* Important to end at opacity: 0 */
+}
+
+/* Style for the final logo */
+.preloader-fading-logo {
+  position: absolute;
+  width: 180px;
+  height: auto;
+  opacity: 0; /* Start hidden */
+  animation-name: fadeInStay;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards; /* Stay at the final state */
+}
+
+
+/* --- Animation Delays (This creates the sequence) --- */
+
+.preloader-fading-icon.icon1 {
+  animation-delay: 0s;
+}
+.preloader-fading-icon.icon2 {
+  animation-delay: 1.2s; /* Starts as the first one is fading out */
+}
+.preloader-fading-icon.icon3 {
+  animation-delay: 2.4s; /* Starts as the second one is fading out */
+}
+.preloader-fading-logo {
+  animation-delay: 3.6s; /* Starts after the last icon fades */
+}
